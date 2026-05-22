@@ -1,0 +1,411 @@
+---
+layout: default
+title: "Inclusive Prototype — WCAG 2.2 AA"
+description: "Accessible web component showcase built with semantic HTML, CSS design tokens, and WCAG 2.2 AA compliance."
+---
+
+<!-- ============================================================
+     HERO
+     Landmark: <main> (in layout). Heading level 1 is here.
+     ============================================================ -->
+<section class="hero" aria-labelledby="hero-heading">
+  <div class="container">
+    <h1 id="hero-heading" class="hero-title">
+      Build for <span class="hero-accent">Everyone</span>
+    </h1>
+    <p class="hero-lead">
+      A reference implementation of WCAG 2.2 AA compliant components using
+      semantic HTML, CSS design tokens, and progressive enhancement.
+    </p>
+    <div class="hero-actions">
+      <a href="#contact-section" class="btn btn-primary">Get in Touch</a>
+      <a href="#components-section" class="btn btn-secondary">View Components</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     PRINCIPLES CARDS
+     Each card is an <article> labelled by its own <h3>.
+     Link text is extended with a .visually-hidden suffix so
+     every link has a unique accessible name (WCAG 2.4.6, 2.4.9).
+     ============================================================ -->
+<section
+  id="components-section"
+  class="section"
+  aria-labelledby="components-heading"
+>
+  <div class="container">
+    <h2 id="components-heading" class="section-title">
+      Accessibility Principles
+    </h2>
+    <p class="section-lead">
+      The four POUR principles underpin every component on this page.
+    </p>
+
+    <ul class="card-grid" role="list">
+
+      <li class="card">
+        <article aria-labelledby="card-perceivable-title">
+          <h3 id="card-perceivable-title" class="card-title">Perceivable</h3>
+          <p class="card-body">
+            Content is presentable in multiple ways without losing meaning.
+            All color meets a 4.5:1 contrast ratio. Images carry descriptive
+            <code>alt</code> text.
+          </p>
+          <a href="#wcag-section" class="card-link">
+            View Perceivable criteria
+            <span class="visually-hidden"> — WCAG Principle 1</span>
+          </a>
+        </article>
+      </li>
+
+      <li class="card">
+        <article aria-labelledby="card-operable-title">
+          <h3 id="card-operable-title" class="card-title">Operable</h3>
+          <p class="card-body">
+            All functionality is keyboard accessible. A skip link bypasses the
+            header. Focus indicators meet WCAG 2.2 SC 2.4.11 size and contrast
+            requirements.
+          </p>
+          <a href="#wcag-section" class="card-link">
+            View Operable criteria
+            <span class="visually-hidden"> — WCAG Principle 2</span>
+          </a>
+        </article>
+      </li>
+
+      <li class="card">
+        <article aria-labelledby="card-understandable-title">
+          <h3 id="card-understandable-title" class="card-title">Understandable</h3>
+          <p class="card-body">
+            <code>lang="en"</code> is declared on the <code>&lt;html&gt;</code>
+            element. Forms provide inline error correction guidance. Navigation
+            is consistent across every page.
+          </p>
+          <a href="#wcag-section" class="card-link">
+            View Understandable criteria
+            <span class="visually-hidden"> — WCAG Principle 3</span>
+          </a>
+        </article>
+      </li>
+
+      <li class="card">
+        <article aria-labelledby="card-robust-title">
+          <h3 id="card-robust-title" class="card-title">Robust</h3>
+          <p class="card-body">
+            Interactive widgets use native HTML elements. All custom patterns
+            expose name, role, and value programmatically so current and future
+            assistive technologies can interpret them.
+          </p>
+          <a href="#wcag-section" class="card-link">
+            View Robust criteria
+            <span class="visually-hidden"> — WCAG Principle 4</span>
+          </a>
+        </article>
+      </li>
+
+    </ul>
+  </div>
+</section>
+
+<!-- ============================================================
+     DISCLOSURE / FAQ
+     Uses <details> and <summary> — native HTML disclosure widget.
+     No ARIA authoring required; open/closed state is exposed
+     automatically by the browser's accessibility tree.
+     ============================================================ -->
+<section class="section section-alt" aria-labelledby="faq-heading">
+  <div class="container">
+    <h2 id="faq-heading" class="section-title">Frequently Asked Questions</h2>
+    <p class="section-lead">
+      Built with native <code>&lt;details&gt;</code> and
+      <code>&lt;summary&gt;</code> — no JavaScript required.
+    </p>
+
+    <div class="faq-list">
+
+      <details class="disclosure">
+        <summary class="disclosure-trigger">What is WCAG 2.2?</summary>
+        <div class="disclosure-content">
+          <p>
+            WCAG 2.2 is the Web Content Accessibility Guidelines version 2.2,
+            published by the W3C in October 2023. It provides 87 success
+            criteria organized under four principles: Perceivable, Operable,
+            Understandable, and Robust (POUR). The AA conformance level is
+            required by most accessibility laws worldwide.
+          </p>
+        </div>
+      </details>
+
+      <details class="disclosure">
+        <summary class="disclosure-trigger">What is new in WCAG 2.2?</summary>
+        <div class="disclosure-content">
+          <p>
+            WCAG 2.2 adds nine new success criteria. Key AA additions include
+            SC 2.4.11 Focus Appearance (focus indicators must meet minimum size
+            and contrast thresholds), SC 2.5.7 Dragging Movements (alternatives
+            required for drag actions), and SC 2.5.8 Target Size Minimum
+            (interactive targets must be at least 24&times;24 CSS pixels).
+          </p>
+        </div>
+      </details>
+
+      <details class="disclosure">
+        <summary class="disclosure-trigger">How do design tokens improve accessibility?</summary>
+        <div class="disclosure-content">
+          <p>
+            Design tokens define all visual properties — colors, spacing,
+            typography — as named CSS custom properties. This prevents
+            hard-coded values, ensures contrast decisions are auditable in one
+            place, and makes global adjustments (e.g. a high-contrast theme)
+            straightforward without touching component rules.
+          </p>
+        </div>
+      </details>
+
+      <details class="disclosure">
+        <summary class="disclosure-trigger">Which keyboard interactions are supported?</summary>
+        <div class="disclosure-content">
+          <p>
+            All interactive elements are reachable via <kbd>Tab</kbd>.
+            The mobile navigation menu closes on <kbd>Escape</kbd> and returns
+            focus to the toggle button. Disclosure widgets toggle with
+            <kbd>Enter</kbd> or <kbd>Space</kbd>. Form fields validate on blur
+            and announce errors via <code>aria-invalid</code> and
+            <code>aria-describedby</code>.
+          </p>
+        </div>
+      </details>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     DATA TABLE
+     - <caption> is visually hidden but exposed to screen readers
+     - All <th> carry scope="col"
+     - Wrapper has tabindex="0" so keyboard users can scroll it
+     ============================================================ -->
+<section id="wcag-section" class="section" aria-labelledby="table-heading">
+  <div class="container">
+    <h2 id="table-heading" class="section-title">WCAG 2.2 New Success Criteria</h2>
+    <p class="section-lead">
+      Nine new criteria added in WCAG 2.2 — level and implementation status
+      for this prototype.
+    </p>
+
+    <div
+      class="table-wrapper"
+      role="region"
+      aria-labelledby="table-heading"
+      tabindex="0"
+    >
+      <table class="data-table">
+        <caption class="visually-hidden">
+          WCAG 2.2 new success criteria — criterion, level, and implementation status
+        </caption>
+        <thead>
+          <tr>
+            <th scope="col">Success Criterion</th>
+            <th scope="col">Level</th>
+            <th scope="col">Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>2.4.11 Focus Appearance</td>
+            <td><span class="badge badge-aa">AA</span></td>
+            <td><span class="status-badge status-pass">Implemented</span></td>
+          </tr>
+          <tr>
+            <td>2.4.12 Focus Not Obscured (Minimum)</td>
+            <td><span class="badge badge-aa">AA</span></td>
+            <td><span class="status-badge status-pass">Implemented</span></td>
+          </tr>
+          <tr>
+            <td>2.4.13 Focus Not Obscured (Enhanced)</td>
+            <td><span class="badge badge-aaa">AAA</span></td>
+            <td><span class="status-badge status-info">Out of scope (AAA)</span></td>
+          </tr>
+          <tr>
+            <td>2.5.7 Dragging Movements</td>
+            <td><span class="badge badge-aa">AA</span></td>
+            <td><span class="status-badge status-pass">N/A — no drag interactions</span></td>
+          </tr>
+          <tr>
+            <td>2.5.8 Target Size (Minimum)</td>
+            <td><span class="badge badge-aa">AA</span></td>
+            <td><span class="status-badge status-pass">Implemented — 44px targets</span></td>
+          </tr>
+          <tr>
+            <td>3.2.6 Consistent Help</td>
+            <td><span class="badge badge-a">A</span></td>
+            <td><span class="status-badge status-pass">Implemented</span></td>
+          </tr>
+          <tr>
+            <td>3.3.7 Redundant Entry</td>
+            <td><span class="badge badge-a">A</span></td>
+            <td><span class="status-badge status-pass">Implemented</span></td>
+          </tr>
+          <tr>
+            <td>3.3.8 Accessible Authentication (Minimum)</td>
+            <td><span class="badge badge-aa">AA</span></td>
+            <td><span class="status-badge status-info">No auth flow present</span></td>
+          </tr>
+          <tr>
+            <td>3.3.9 Accessible Authentication (Enhanced)</td>
+            <td><span class="badge badge-aaa">AAA</span></td>
+            <td><span class="status-badge status-info">Out of scope (AAA)</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     ACCESSIBLE FORM
+     Verb mapping applied:
+       "collect text"  → <input type="text">  + <label for="...">
+       "collect email" → <input type="email"> + <label for="...">
+       "select option" → <select>             + <label for="...">
+       "collect multi" → <textarea>           + <label for="...">
+       "submit"        → <button type="submit">
+
+     Each <input>/<select>/<textarea>:
+       · Explicit <label> via matching for/id (WCAG 1.3.1, 4.1.2)
+       · aria-required="true" + required attribute
+       · aria-describedby links to hint AND error spans
+       · Error span starts empty; populated by form.js on validation
+
+     The post-submit live region uses aria-live="polite" and
+     tabindex="-1" so JS can move focus to it on success.
+     ============================================================ -->
+<section
+  id="contact-section"
+  class="section section-alt"
+  aria-labelledby="contact-heading"
+>
+  <div class="container">
+    <h2 id="contact-heading" class="section-title">Contact Us</h2>
+    <p class="section-lead">
+      Fields marked with
+      <span aria-hidden="true">*</span><span class="visually-hidden">an asterisk</span>
+      are required.
+    </p>
+
+    <!-- Live region: populated by form.js after submit attempt -->
+    <div
+      id="form-status"
+      class="form-status"
+      aria-live="polite"
+      aria-atomic="true"
+      tabindex="-1"
+    ></div>
+
+    <form
+      id="contact-form"
+      class="contact-form"
+      novalidate
+      aria-labelledby="contact-heading"
+    >
+
+      <!-- Full Name -->
+      <div class="form-group">
+        <label for="contact-name" class="form-label">
+          Full Name
+          <span class="required-marker" aria-hidden="true">*</span>
+        </label>
+        <input
+          type="text"
+          id="contact-name"
+          name="name"
+          class="form-input"
+          autocomplete="name"
+          required
+          aria-required="true"
+          aria-describedby="contact-name-error"
+          minlength="2"
+        >
+        <span id="contact-name-error" class="field-error"></span>
+      </div>
+
+      <!-- Email Address -->
+      <div class="form-group">
+        <label for="contact-email" class="form-label">
+          Email Address
+          <span class="required-marker" aria-hidden="true">*</span>
+        </label>
+        <input
+          type="email"
+          id="contact-email"
+          name="email"
+          class="form-input"
+          autocomplete="email"
+          required
+          aria-required="true"
+          aria-describedby="contact-email-hint contact-email-error"
+        >
+        <span id="contact-email-hint" class="field-hint">
+          We will never share your email address.
+        </span>
+        <span id="contact-email-error" class="field-error"></span>
+      </div>
+
+      <!-- Subject (select) -->
+      <div class="form-group">
+        <label for="contact-subject" class="form-label">
+          Subject
+          <span class="required-marker" aria-hidden="true">*</span>
+        </label>
+        <select
+          id="contact-subject"
+          name="subject"
+          class="form-select"
+          required
+          aria-required="true"
+          aria-describedby="contact-subject-error"
+        >
+          <option value="" disabled selected>Select a subject</option>
+          <option value="accessibility-review">Accessibility Review</option>
+          <option value="component-library">Component Library</option>
+          <option value="training">Training &amp; Workshops</option>
+          <option value="other">Other</option>
+        </select>
+        <span id="contact-subject-error" class="field-error"></span>
+      </div>
+
+      <!-- Message (textarea) -->
+      <div class="form-group">
+        <label for="contact-message" class="form-label">
+          Message
+          <span class="required-marker" aria-hidden="true">*</span>
+        </label>
+        <textarea
+          id="contact-message"
+          name="message"
+          class="form-textarea"
+          rows="5"
+          required
+          aria-required="true"
+          aria-describedby="contact-message-hint contact-message-error"
+          minlength="20"
+        ></textarea>
+        <span id="contact-message-hint" class="field-hint">
+          Minimum 20 characters.
+        </span>
+        <span id="contact-message-error" class="field-error"></span>
+      </div>
+
+      <div class="form-actions">
+        <!-- Action "submit" → native <button type="submit"> -->
+        <button type="submit" class="btn btn-primary">Send Message</button>
+        <!-- Action "reset"  → native <button type="reset"> -->
+        <button type="reset" class="btn btn-secondary">Clear Form</button>
+      </div>
+
+    </form>
+  </div>
+</section>
