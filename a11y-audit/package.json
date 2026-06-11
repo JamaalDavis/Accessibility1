@@ -1,0 +1,13 @@
+{
+  "name": "a11y-audit",
+  "version": "1.0.0",
+  "description": "Automated WCAG 2.2 AA audit using axe-core and Playwright",
+  "scripts": {
+    "audit": "node audit.js",
+    "audit:local": "node audit.js --url http://localhost:4000/Accessibility1"
+  },
+  "dependencies": {
+    "@axe-core/playwright": "^4.10.1",
+    "playwright": "^1.49.1"
+  }
+}

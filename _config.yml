@@ -1,1 +1,3 @@
 theme: jekyll-theme-hacker
+title: "Inclusive Prototype"
+description: "A WCAG 2.2 AA accessible web prototype demonstrating semantic HTML, CSS design tokens, and accessible interaction patterns."
